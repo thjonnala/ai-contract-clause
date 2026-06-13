@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Chat via Groq (OpenAI-compatible API serving open-source Llama models) -->
+    <PackageReference Include="OpenAI" Version="2.1.0" />
+    <!-- Relational store: Supabase Postgres (was Azure SQL) -->
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+    <PackageReference Include="EFCore.NamingConventions" Version="9.0.0" />
+    <!-- Vector search in Postgres via pgvector (was Azure AI Search) -->
+    <PackageReference Include="Pgvector" Version="0.3.1" />
+    <PackageReference Include="Pgvector.EntityFrameworkCore" Version="0.2.2" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.*" />
+    <!-- PDF text extraction (open source, unchanged) -->
+    <PackageReference Include="PdfPig" Version="0.1.14" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+# Render Blueprint — deploys the Contract Clause Assistant as a single Docker
+# web service. Create the service via Render → "New" → "Blueprint" and point it
+# at this repo, or set values manually in the dashboard.
+#
+# Secrets (sync: false) must be set in the Render dashboard after first deploy:
+#   DATABASE_CONNECTION  — Npgsql connection string for the Supabase Postgres DB
+#   GROQ_API_KEY         — https://console.groq.com/keys
+#   GEMINI_API_KEY       — https://aistudio.google.com/app/apikey
+services:
+  - type: web
+    name: ai-contract-clause
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /api/ai/status
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_CONNECTION
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GROQ_CHAT_MODEL
+        value: llama-3.3-70b-versatile
+      - key: GEMINI_EMBED_MODEL
+        value: text-embedding-004

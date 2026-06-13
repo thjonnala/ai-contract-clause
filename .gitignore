@@ -1,0 +1,12 @@
+.env
+*.user
+bin/
+obj/
+publish/
+node_modules/
+src/web/dist/
+src/api/wwwroot/
+.claude/settings.local.json
+
+# Azure resource handout — contains a live key + PII; never commit.
+resource-7134.md

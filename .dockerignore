@@ -1,0 +1,12 @@
+**/bin
+**/obj
+**/node_modules
+src/web/dist
+**/.vs
+.git
+.github
+.claude
+*.user
+README.md
+designs
+ado
